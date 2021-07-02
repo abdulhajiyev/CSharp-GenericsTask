@@ -44,11 +44,11 @@ namespace CSharp_GenericsTask
 
         public static void Method4(List<Debtor> debtors)
         {
-            //char ch = '.';
+            //var ch = '.';
             var users = debtors.Where(user =>
-                user.FullName.ToCharArray().Where(c => !Char.IsWhiteSpace(c)).ToArray().Length > 18 &&
+                user.FullName.ToCharArray().Where(c => !char.IsWhiteSpace(c)).ToArray().Length > 18 &&
                 user.Phone.Count(n => n == '7') >= 2);
-
+            //var users = debtors.Where(user => user.FullName.Select(x => string.Join("", x.Split(' ', '.'))).ToArray());
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 "\nDebtors with 18 or more characters in their FullName and 2 or more digit 7 in their phone number");
@@ -61,7 +61,18 @@ namespace CSharp_GenericsTask
 
         public static void Method5(List<Debtor> debtors)
         {
-        }
+            var users = debtors.Where(user =>
+                user.BirthDay.Month is 12 or 1 or 2);
+            
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\nDebtors who were born in Winter");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var user in users)
+            {
+                Console.WriteLine(user.ToString());
+            }
+        } // Qishda anadan olan borclulari cixardmaq
 
         public static void Method6(List<Debtor> debtors)
         {

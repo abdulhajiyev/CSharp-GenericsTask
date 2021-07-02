@@ -119,15 +119,16 @@ namespace CSharp_GenericsTask
                     "LakishaRForrest@armyspy.com", "3121 Quarry Drive Montgomery, AL 36117", 3088),
                 new Debtor("Pamela H. Beauchamp", DateTime.Parse("November 20, 1959"), "801-559-6347",
                     "PamelaHBeauchamp@jourrapide.com", "3239 Tori Lane Salt Lake City, UT 84104", 6588),
-                new Debtor("AbdulHajiyev H. Hormat", DateTime.Parse("Aril 29, 2001"), "379-373-6799",
+                new Debtor("AbdulHajiyev H. Hormat", DateTime.Parse("April 29, 2001"), "379-373-6799",
                 "AbdulHajiyev@gmail.com", "9590 Azerbaijan Baku Khazar District Mardakan, AZ 90595", 9590)
             };
 
-
+            Console.WriteLine(debtors[0].BirthDay.Month);
             ExtensionMethods.Method1(debtors);
             ExtensionMethods.Method2(debtors);
             ExtensionMethods.Method3(debtors);
             ExtensionMethods.Method4(debtors);
+            ExtensionMethods.Method5(debtors);
             Console.ReadKey();
 
             #region Task
