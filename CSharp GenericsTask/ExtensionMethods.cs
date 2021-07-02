@@ -15,7 +15,7 @@ namespace CSharp_GenericsTask
             foreach (var debtor in debtors.Where(user =>
                 user.Email.Contains("rhyta.com") || user.Email.Contains("dayrep.com")))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
         } //rhyta.com ve ya dayrep.com domenlerinde emaili olan borclulari cixartmag
 
@@ -27,7 +27,7 @@ namespace CSharp_GenericsTask
             foreach (var debtor in debtors.Where(user =>
                 DateTime.Now.Year - user.BirthDay.Year > 26 && DateTime.Now.Year - user.BirthDay.Year < 36))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
         } // Yashi 26-dan 36-ya qeder olan borclulari cixartmag
 
@@ -38,7 +38,7 @@ namespace CSharp_GenericsTask
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.Where(user => user.Debt < 5000))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
         } // Borcu 5000-den cox olmayan borclularic cixartmag
 
@@ -55,7 +55,7 @@ namespace CSharp_GenericsTask
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var user in users)
             {
-                Console.WriteLine(user.ToString());
+                Console.WriteLine(user);
             }
         } // Butov adi 18 simvoldan cox olan ve telefon nomresinde 2 ve ya 2-den cox 7 reqemi olan borclulari cixartmaq
 
@@ -68,7 +68,7 @@ namespace CSharp_GenericsTask
             foreach (var debtor in debtors.Where(user =>
                 user.BirthDay.Month is 12 or 1 or 2))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
         } // Qishda anadan olan borclulari cixardmaq
 
@@ -89,7 +89,7 @@ namespace CSharp_GenericsTask
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.Where(user => user.Debt > average))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -98,7 +98,7 @@ namespace CSharp_GenericsTask
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.OrderBy(user => user.FullName.Split()[2]))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -107,7 +107,7 @@ namespace CSharp_GenericsTask
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.OrderByDescending(user => user.Debt))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
         } // Borcu, umumi borclarin orta borcunnan cox olan borclulari cixarmaq ve evvel familyaya gore sonra ise meblegin azalmagina gore sortirovka etmek
 
@@ -144,7 +144,7 @@ Phone: {debtor.Phone}");
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.OrderByDescending(debtor => debtor.Debt).Take(5))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
         } // Borcu en boyuk olan 5 borclunun siyahisini cixartmaq
 
@@ -165,7 +165,7 @@ Phone: {debtor.Phone}");
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.Where(user => user.BirthDay.Year is >= 1941 and <= 1945))
             {
-                Console.WriteLine(debtor.ToString());
+                Console.WriteLine(debtor);
             }
         } // 2ci dunya muharibesin gormush borclularin siyahisi cixartmaq
 
