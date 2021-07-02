@@ -155,19 +155,19 @@ namespace CSharp_GenericsTask
 
             8)Adinda ve familyasinda hec olmasa 3 eyni herf olan borclularin siyahisin cixarmaq ve onlari elifba sirasina gore sortirovka elemek
 
-            9)borclulardan en coxu hansi ilde dogulubsa hemin ili cixartmaq
+            9)Borclulardan en coxu hansi ilde dogulubsa hemin ili cixartmaq
 
-            11)Borcu en boyuk olan 5 borclunun siyahisini cixartmaq
+            10)Borcu en boyuk olan 5 borclunun siyahisini cixartmaq
 
-            12)Butun borcu olanlarin borcunu cemleyib umumi borcu cixartmaq
+            11)Butun borcu olanlarin borcunu cemleyib umumi borcu cixartmaq
 
-            13)2ci dunya muharibesin gormush borclularin siyahisi cixartmaq
+            12)2ci dunya muharibesin gormush borclularin siyahisi cixartmaq
 	
-            14)Nomresinde tekrar reqemler olmayan borclularin ve onlarin borcunun meblegin cixartmaq
+            13)Nomresinde tekrar reqemler olmayan borclularin ve onlarin borcunun meblegin cixartmaq
 
-            15)Tesevvur edek ki,butun borclari olanlar bugunden etibaren her ay 500 azn pul odeyecekler. Oz ad gunune kimi borcun oduyub qurtara bilenlerin siyahisin cixartmaq
+            14)Tesevvur edek ki,butun borclari olanlar bugunden etibaren her ay 500 azn pul odeyecekler. Oz ad gunune kimi borcun oduyub qurtara bilenlerin siyahisin cixartmaq
 
-            16)Adindaki ve familyasindaki herflerden "smile" sozunu yaza bileceyimiz borclularin siyahisini cixartmaq
+            15)Adindaki ve familyasindaki herflerden "smile" sozunu yaza bileceyimiz borclularin siyahisini cixartmaq
             */
 
             #endregion
