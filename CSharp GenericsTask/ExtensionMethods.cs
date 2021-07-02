@@ -9,37 +9,37 @@ namespace CSharp_GenericsTask
     {
         public static void Method1(List<Debtor> debtors)
         {
-            var users = debtors.Where(user => user.Email.Contains("rhyta.com") || user.Email.Contains("dayrep.com"));
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Debtors with emails in rhyta.com or dayrep.com domains: ");
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var user in users)
+            foreach (var debtor in debtors.Where(user =>
+                user.Email.Contains("rhyta.com") || user.Email.Contains("dayrep.com")))
             {
-                Console.WriteLine(user.ToString());
+                Console.WriteLine(debtor.ToString());
             }
         } //rhyta.com ve ya dayrep.com domenlerinde emaili olan borclulari cixartmag
 
         public static void Method2(List<Debtor> debtors)
         {
-            var users = debtors.Where(user =>
-                DateTime.Now.Year - user.BirthDay.Year > 26 && DateTime.Now.Year - user.BirthDay.Year < 36);
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(value: "\nDebtors between the ages of 26 and 36");
+            Console.WriteLine("\nDebtors between the ages of 26 and 36");
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var user in users)
+            foreach (var debtor in debtors.Where(user =>
+                DateTime.Now.Year - user.BirthDay.Year > 26 && DateTime.Now.Year - user.BirthDay.Year < 36))
             {
-                Console.WriteLine(user.ToString());
+                Console.WriteLine(debtor.ToString());
             }
         } // Yashi 26-dan 36-ya qeder olan borclulari cixartmag
 
         public static void Method3(List<Debtor> debtors)
         {
-            var users = debtors.Where(user => user.Debt < 5000);
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(value: "\nDebtors with no more than 5,000 in debt");
+            Console.WriteLine("\nDebtors with no more than 5,000 in debt");
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var user in users)
-                Console.WriteLine(user.ToString());
+            foreach (var debtor in debtors.Where(user => user.Debt < 5000))
+            {
+                Console.WriteLine(debtor.ToString());
+            }
         } // Borcu 5000-den cox olmayan borclularic cixartmag
 
         public static void Method4(List<Debtor> debtors)
@@ -61,16 +61,14 @@ namespace CSharp_GenericsTask
 
         public static void Method5(List<Debtor> debtors)
         {
-            var users = debtors.Where(user =>
-                user.BirthDay.Month is 12 or 1 or 2);
-
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 "\nDebtors who were born in Winter");
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var user in users)
+            foreach (var debtor in debtors.Where(user =>
+                user.BirthDay.Month is 12 or 1 or 2))
             {
-                Console.WriteLine(user.ToString());
+                Console.WriteLine(debtor.ToString());
             }
         } // Qishda anadan olan borclulari cixardmaq
 
@@ -85,14 +83,13 @@ namespace CSharp_GenericsTask
             }
 
             var average = sum / count; // 6463
-            var users = debtors.Where(user => user.Debt > average);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 "\nDebtors who have debt more than the average of the total debt");
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var user in users)
+            foreach (var debtor in debtors.Where(user => user.Debt > average))
             {
-                Console.WriteLine(user.ToString());
+                Console.WriteLine(debtor.ToString());
             }
 
             Console.ForegroundColor = ConsoleColor.Red;
@@ -100,14 +97,18 @@ namespace CSharp_GenericsTask
                 "\nSorted surnames A-Z");
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.OrderBy(user => user.FullName.Split()[2]))
+            {
                 Console.WriteLine(debtor.ToString());
+            }
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 "\nSorted debts Largest to Smallest");
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.OrderByDescending(user => user.Debt))
+            {
                 Console.WriteLine(debtor.ToString());
+            }
         } // Borcu, umumi borclarin orta borcunnan cox olan borclulari cixarmaq ve evvel familyaya gore sonra ise meblegin azalmagina gore sortirovka etmek
 
         public static void Method7(List<Debtor> debtors)
@@ -162,7 +163,7 @@ Phone: {debtor.Phone}");
             Console.WriteLine(
                 $"\nList of World War II debtors");
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var debtor in debtors.Where(user =>user.BirthDay.Year is >= 1941 and <= 1945 ))
+            foreach (var debtor in debtors.Where(user => user.BirthDay.Year is >= 1941 and <= 1945))
             {
                 Console.WriteLine(debtor.ToString());
             }
