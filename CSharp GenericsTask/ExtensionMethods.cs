@@ -63,7 +63,7 @@ namespace CSharp_GenericsTask
         {
             var users = debtors.Where(user =>
                 user.BirthDay.Month is 12 or 1 or 2);
-            
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 "\nDebtors who were born in Winter");
@@ -83,6 +83,7 @@ namespace CSharp_GenericsTask
                 sum += debtor.Debt;
                 count++;
             }
+
             var average = sum / count; // 6463
             var users = debtors.Where(user => user.Debt > average);
             Console.ForegroundColor = ConsoleColor.Red;
@@ -93,14 +94,21 @@ namespace CSharp_GenericsTask
             {
                 Console.WriteLine(user.ToString());
             }
-            
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 "\nSorted surnames A-Z");
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.OrderBy(user => user.FullName.Split()[2]))
                 Console.WriteLine(debtor.ToString());
-        }
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\nSorted debts Largest to Smallest");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var debtor in debtors.OrderByDescending(user => user.Debt))
+                Console.WriteLine(debtor.ToString());
+        } // Borcu, umumi borclarin orta borcunnan cox olan borclulari cixarmaq ve evvel familyaya gore sonra ise meblegin azalmagina gore sortirovka etmek
 
         public static void Method7(List<Debtor> debtors)
         {
