@@ -76,6 +76,24 @@ namespace CSharp_GenericsTask
 
         public static void Method6(List<Debtor> debtors)
         {
+            var sum = 0;
+            var count = 0;
+            foreach (var debtor in debtors)
+            {
+                sum += debtor.Debt;
+                count++;
+            }
+            var average = sum / count; // 6463
+            var users = debtors.Where(user => user.Debt > average);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\nDebtors who have debt more than the average of the total debt");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var user in users)
+            {
+                Console.WriteLine(user.ToString());
+            }
+
         }
 
         public static void Method7(List<Debtor> debtors)

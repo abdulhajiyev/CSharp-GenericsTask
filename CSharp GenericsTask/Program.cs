@@ -129,6 +129,7 @@ namespace CSharp_GenericsTask
             ExtensionMethods.Method3(debtors);
             ExtensionMethods.Method4(debtors);
             ExtensionMethods.Method5(debtors);
+            ExtensionMethods.Method6(debtors);
             Console.ReadKey();
 
             #region Task
