@@ -74,7 +74,7 @@ namespace CSharp_GenericsTask
             }
         } // Qishda anadan olan borclulari cixardmaq
 
-        public static void Method6(List<Debtor> debtors) 
+        public static void Method6(List<Debtor> debtors)
         {
             var sum = 0;
             var count = 0;
@@ -116,7 +116,7 @@ namespace CSharp_GenericsTask
             Console.WriteLine(
                 "\nDebtors who don't have  digit 8 in their phone number");
             Console.ForegroundColor = ConsoleColor.White;
-            
+
             foreach (var debtor in debtors.Where(user => user.Phone.Count(n => n == '8') == 0))
             {
                 Console.WriteLine(@$"
@@ -137,14 +137,35 @@ Phone: {debtor.Phone}");
 
         public static void Method10(List<Debtor> debtors)
         {
-        }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\n5 debtors with the largest debt");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var debtor in debtors.OrderByDescending(debtor => debtor.Debt).Take(5))
+            {
+                Console.WriteLine(debtor.ToString());
+            }
+        } // Borcu en boyuk olan 5 borclunun siyahisini cixartmaq
 
         public static void Method11(List<Debtor> debtors)
         {
+            var total = debtors.Select(user => user.Debt).Sum();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(
+                $"\nTotal debt: {total}");
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public static void Method12(List<Debtor> debtors)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                $"\nList of World War II debtors");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var debtor in debtors.Where(user =>user.BirthDay.Year is >= 1941 and <= 1945 ))
+            {
+                Console.WriteLine(debtor.ToString());
+            }
         }
 
         public static void Method13(List<Debtor> debtors)
