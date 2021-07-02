@@ -74,7 +74,7 @@ namespace CSharp_GenericsTask
             }
         } // Qishda anadan olan borclulari cixardmaq
 
-        public static void Method6(List<Debtor> debtors)
+        public static void Method6(List<Debtor> debtors) 
         {
             var sum = 0;
             var count = 0;
@@ -112,7 +112,20 @@ namespace CSharp_GenericsTask
 
         public static void Method7(List<Debtor> debtors)
         {
-        }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\nDebtors who don't have  digit 8 in their phone number");
+            Console.ForegroundColor = ConsoleColor.White;
+            
+            foreach (var debtor in debtors.Where(user => user.Phone.Count(n => n == '8') == 0))
+            {
+                Console.WriteLine(@$"
+Surname: {debtor.FullName.Split()[2]}
+Age: {DateTime.Now.Year - debtor.BirthDay.Year}
+Debt: {debtor.Debt}
+Phone: {debtor.Phone}");
+            }
+        } // Telefon nomresinde 8 olmayan borclularin yalniz familyasin,yashin ve umumi borcun meblegin cixarmaq
 
         public static void Method8(List<Debtor> debtors)
         {
