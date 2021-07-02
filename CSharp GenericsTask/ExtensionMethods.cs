@@ -155,7 +155,7 @@ Phone: {debtor.Phone}");
             Console.WriteLine(
                 $"\nTotal debt: {total}");
             Console.ForegroundColor = ConsoleColor.White;
-        }
+        } // Butun borcu olanlarin borcunu cemleyib umumi borcu cixartmaq
 
         public static void Method12(List<Debtor> debtors)
         {
@@ -167,7 +167,7 @@ Phone: {debtor.Phone}");
             {
                 Console.WriteLine(debtor.ToString());
             }
-        }
+        } // 2ci dunya muharibesin gormush borclularin siyahisi cixartmaq
 
         public static void Method13(List<Debtor> debtors)
         {
@@ -179,10 +179,10 @@ Phone: {debtor.Phone}");
 
         public static void Method15(List<Debtor> debtors)
         {
-        }
-
-        public static void Method16(List<Debtor> debtors)
-        {
+            /*foreach (var debtor in debtors.Where(user => user.FullName.ToCharArray().Contains("smile")))
+            {
+                Console.WriteLine(debtor.FullName);
+            }*/
         }
     }
 }
