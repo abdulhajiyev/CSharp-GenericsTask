@@ -93,7 +93,13 @@ namespace CSharp_GenericsTask
             {
                 Console.WriteLine(user.ToString());
             }
-
+            
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\nSorted surnames A-Z");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var debtor in debtors.OrderBy(user => user.FullName.Split()[2]))
+                Console.WriteLine(debtor.ToString());
         }
 
         public static void Method7(List<Debtor> debtors)
