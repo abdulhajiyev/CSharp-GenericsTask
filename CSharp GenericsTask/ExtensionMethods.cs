@@ -122,11 +122,11 @@ Phone: {debtor.Phone}");
 
         public static void Method8(List<Debtor> debtors)
         {
-        }
+        } // Adinda ve familyasinda hec olmasa 3 eyni herf olan borclularin siyahisin cixarmaq ve onlari elifba sirasina gore sortirovka elemek
 
         public static void Method9(List<Debtor> debtors)
         {
-        }
+        } // Borclulardan en coxu hansi ilde dogulubsa hemin ili cixartmaq
 
         public static void Method10(List<Debtor> debtors)
         {
@@ -163,18 +163,26 @@ Phone: {debtor.Phone}");
 
         public static void Method13(List<Debtor> debtors)
         {
-        }
+        } // Nomresinde tekrar reqemler olmayan borclularin ve onlarin borcunun meblegin cixartmaq
 
         public static void Method14(List<Debtor> debtors)
         {
-        }
+        } // Tesevvur edek ki,butun borclari olanlar bugunden etibaren her ay 500 azn pul odeyecekler. Oz ad gunune kimi borcun oduyub qurtara bilenlerin siyahisin cixartmaq
 
         public static void Method15(List<Debtor> debtors)
         {
-            /*foreach (var debtor in debtors.Where(user => user.FullName.ToCharArray().Contains("smile")))
+            const string word = "smile";
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                $"\nDebtors with the word \"smile\" in the letters of their fullname");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var debtor in debtors.Select(user => user.FullName.ToString().ToLower().ToCharArray()))
             {
-                Console.WriteLine(debtor.FullName);
-            }*/
-        }
+                if (word.All(c => debtor.Contains(c)))
+                {
+                    Console.WriteLine(debtor);
+                }
+            }
+        } // Adindaki ve familyasindaki herflerden "smile" sozunu yaza bileceyimiz borclularin siyahisini cixartmaq
     }
 }
