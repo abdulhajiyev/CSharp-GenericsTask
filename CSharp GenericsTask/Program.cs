@@ -131,9 +131,11 @@ namespace CSharp_GenericsTask
             ExtensionMethods.Method5(debtors);
             ExtensionMethods.Method6(debtors);
             ExtensionMethods.Method7(debtors);
+            ExtensionMethods.Method8(debtors);
             ExtensionMethods.Method10(debtors);
             ExtensionMethods.Method11(debtors);
             ExtensionMethods.Method12(debtors);
+            ExtensionMethods.Method13(debtors);
             ExtensionMethods.Method15(debtors);
             Console.ReadKey();
 
