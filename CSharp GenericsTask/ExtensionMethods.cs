@@ -112,7 +112,10 @@ namespace CSharp_GenericsTask
             
             foreach (var debtor in debtors.Where(user => !user.Phone.Contains('8')).ToList())
             {
-                Console.WriteLine(debtor);
+                Console.WriteLine(@$"
+Surname: {debtor.FullName.Split()[2]}
+Age: {DateTime.Now.Year - debtor.BirthDay.Year}
+Debt: {debtor.Debt}");
             }
         } // Telefon nomresinde 8 olmayan borclularin yalniz familyasin,yashin ve umumi borcun meblegin cixarmaq
 
@@ -120,8 +123,7 @@ namespace CSharp_GenericsTask
         {
             foreach (var str in debtors.Select(item => item.FullName.Split(' ')))
             {
-                //Console.WriteLine(item.FullName);
-                Console.WriteLine(str[0]);
+
             }
         } // Adinda ve familyasinda hec olmasa 3 eyni herf olan borclularin siyahisin cixarmaq ve onlari elifba sirasina gore sortirovka elemek
 
