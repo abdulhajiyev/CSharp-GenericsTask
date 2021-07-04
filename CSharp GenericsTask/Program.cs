@@ -122,8 +122,7 @@ namespace CSharp_GenericsTask
                 new Debtor("AbdulHajiyev H. Hormat", DateTime.Parse("April 29, 2001"), "379-373-6799",
                 "AbdulHajiyev@gmail.com", "9590 Azerbaijan Baku Khazar District Mardakan, AZ 90595", 9590)
             };
-
-            Console.WriteLine(debtors[0].BirthDay.Month);
+            
             ExtensionMethods.Method1(debtors);
             ExtensionMethods.Method2(debtors);
             ExtensionMethods.Method3(debtors);

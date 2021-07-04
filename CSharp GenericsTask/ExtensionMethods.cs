@@ -109,14 +109,10 @@ namespace CSharp_GenericsTask
             Console.WriteLine(
                 "\nDebtors who don't have  digit 8 in their phone number");
             Console.ForegroundColor = ConsoleColor.White;
-
-            foreach (var debtor in debtors.Where(user => user.Phone.Count(n => n == '8') == 0))
+            
+            foreach (var debtor in debtors.Where(user => !user.Phone.Contains('8')).ToList())
             {
-                Console.WriteLine(@$"
-Surname: {debtor.FullName.Split()[2]}
-Age: {DateTime.Now.Year - debtor.BirthDay.Year}
-Debt: {debtor.Debt}
-Phone: {debtor.Phone}");
+                Console.WriteLine(debtor);
             }
         } // Telefon nomresinde 8 olmayan borclularin yalniz familyasin,yashin ve umumi borcun meblegin cixarmaq
 
