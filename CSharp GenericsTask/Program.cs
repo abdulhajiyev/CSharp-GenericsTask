@@ -119,7 +119,7 @@ namespace CSharp_GenericsTask
                     "LakishaRForrest@armyspy.com", "3121 Quarry Drive Montgomery, AL 36117", 3088),
                 new Debtor("Pamela H. Beauchamp", DateTime.Parse("November 20, 1959"), "801-559-6347",
                     "PamelaHBeauchamp@jourrapide.com", "3239 Tori Lane Salt Lake City, UT 84104", 6588),
-                new Debtor("AbdulHajiyev H. Hormat", DateTime.Parse("April 29, 2001"), "379-373-6799",
+                new Debtor("AbdulHajiyev H. Hormat", DateTime.Parse("April 29, 2001"), "123-456-7890",
                 "AbdulHajiyev@gmail.com", "9590 Azerbaijan Baku Khazar District Mardakan, AZ 90595", 9590)
             };
             
@@ -134,7 +134,7 @@ namespace CSharp_GenericsTask
             ExtensionMethods.Method10(debtors);
             ExtensionMethods.Method11(debtors);
             ExtensionMethods.Method12(debtors);
-            ExtensionMethods.Method13(debtors);
+            ExtensionMethods.Method13(debtors); // Added new Debtor to test this method
             ExtensionMethods.Method15(debtors);
             Console.ReadKey();
 

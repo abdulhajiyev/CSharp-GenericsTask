@@ -78,8 +78,9 @@ namespace CSharp_GenericsTask
             Console.WriteLine(
                 "\nDebtors who have debt more than the average of the total debt");
             Console.ForegroundColor = ConsoleColor.White;
-            
-            foreach (var debtor in debtors.Where(user=>user.Debt > debtors.Select(user=>user.Debt).Average())) //AVG = 6463
+
+            foreach (var debtor in
+                debtors.Where(user => user.Debt > debtors.Select(user => user.Debt).Average())) //AVG = 6463
             {
                 Console.WriteLine(debtor);
             }
@@ -109,7 +110,7 @@ namespace CSharp_GenericsTask
             Console.WriteLine(
                 "\nDebtors who don't have  digit 8 in their phone number");
             Console.ForegroundColor = ConsoleColor.White;
-            
+
             foreach (var debtor in debtors.Where(user => !user.Phone.Contains('8')).ToList())
             {
                 Console.WriteLine(@$"
@@ -123,7 +124,6 @@ Debt: {debtor.Debt}");
         {
             foreach (var str in debtors.Select(item => item.FullName.Split(' ')))
             {
-
             }
         } // Adinda ve familyasinda hec olmasa 3 eyni herf olan borclularin siyahisin cixarmaq ve onlari elifba sirasina gore sortirovka elemek
 
@@ -168,9 +168,15 @@ Debt: {debtor.Debt}");
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
-                $"\nTest Model");
+                $"\nDebtors who don't have same digits in their phone number");
             Console.ForegroundColor = ConsoleColor.White;
-            
+            foreach (var debtor in debtors.Where(debtor =>
+                debtor.Phone.Where(char.IsDigit).All(c => debtor.Phone.Count(n => n == c) == 1)))
+            {
+                Console.WriteLine(@$"
+Phone: {debtor.Phone}
+Debt: {debtor.Debt}");
+            }
         } // Nomresinde tekrar reqemler olmayan borclularin ve onlarin borcunun meblegin cixartmaq
 
         public static void Method14(List<Debtor> debtors)
