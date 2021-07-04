@@ -78,8 +78,8 @@ namespace CSharp_GenericsTask
             Console.WriteLine(
                 "\nDebtors who have debt more than the average of the total debt");
             Console.ForegroundColor = ConsoleColor.White;
-            foreach (var debtor in debtors.Where(user =>
-                user.Debt > debtors.Select(user => user.Debt).Sum() / debtors.Count)) //AVG = 6463
+            
+            foreach (var debtor in debtors.Where(user=>user.Debt > debtors.Select(user=>user.Debt).Average())) //AVG = 6463
             {
                 Console.WriteLine(debtor);
             }
@@ -172,6 +172,7 @@ Phone: {debtor.Phone}");
             Console.WriteLine(
                 $"\nTest Model");
             Console.ForegroundColor = ConsoleColor.White;
+            
         } // Nomresinde tekrar reqemler olmayan borclularin ve onlarin borcunun meblegin cixartmaq
 
         public static void Method14(List<Debtor> debtors)
