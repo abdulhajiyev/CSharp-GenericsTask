@@ -189,9 +189,29 @@ Phone: {debtor.Phone}
 Debt: {debtor.Debt}");
             }
         } // Nomresinde tekrar reqemler olmayan borclularin ve onlarin borcunun meblegin cixartmaq
-
+        
         public static void Method14(List<Debtor> debtors)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                $"\nDebtors who can pay dept until birthday from today");
+            Console.ForegroundColor = ConsoleColor.White;
+            foreach (var debtor in debtors)
+            {
+                int month;
+                if (DateTime.Today.Month > debtor.BirthDay.Month)
+                {
+                    month = 12 - DateTime.Today.Month + debtor.BirthDay.Month;
+                }
+                else
+                {
+                    month = debtor.BirthDay.Month - DateTime.Today.Month;
+                }
+                if (month * 500 >= debtor.Debt)
+                {
+                    Console.WriteLine(debtor);
+                }
+            }
         } // Tesevvur edek ki,butun borclari olanlar bugunden etibaren her ay 500 azn pul odeyecekler. Oz ad gunune kimi borcun oduyub qurtara bilenlerin siyahisin cixartmaq
 
         public static void Method15(List<Debtor> debtors)
