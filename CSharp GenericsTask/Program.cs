@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using CSharp_GenericsTask;
-
-using System.Linq;
 
 namespace CSharp_GenericsTask
 {
