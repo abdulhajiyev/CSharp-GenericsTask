@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 
 namespace CSharp_GenericsTask
@@ -111,22 +110,31 @@ namespace CSharp_GenericsTask
                 "\nDebtors who don't have  digit 8 in their phone number");
             Console.ForegroundColor = ConsoleColor.White;
 
-            foreach (var debtor in debtors.Where(user => !user.Phone.Contains('8')).ToList())
+            foreach (var debtor in debtors.Where(user => !user.Phone.Contains('8')))
             {
                 Console.WriteLine(@$"
 Surname: {debtor.FullName.Split()[2]}
 Age: {DateTime.Now.Year - debtor.BirthDay.Year}
-Debt: {debtor.Debt}");
+Debt: {debtor.Debt},
+Phone: {debtor.Phone}");
             }
         } // Telefon nomresinde 8 olmayan borclularin yalniz familyasin,yashin ve umumi borcun meblegin cixarmaq
 
         public static void Method8(List<Debtor> debtors)
         {
-            foreach (var str in debtors.Select(item => item.FullName.Split(' ')))
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\nDebtors who have 3 or more same letter in their FullName");
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (var debtor in debtors.Where(debtor =>
+                debtor.FullName.ToLower().Where(char.IsLetter)
+                    .Any(c => debtor.FullName.ToLower().Count(n => n == c) >= 3)).OrderBy(x => x.FullName))
             {
+                Console.WriteLine(debtor);
             }
         } // Adinda ve familyasinda hec olmasa 3 eyni herf olan borclularin siyahisin cixarmaq ve onlari elifba sirasina gore sortirovka elemek
-
+        
         public static void Method9(List<Debtor> debtors)
         {
         } // Borclulardan en coxu hansi ilde dogulubsa hemin ili cixartmaq
@@ -136,6 +144,7 @@ Debt: {debtor.Debt}");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 "\n5 debtors with the largest debt");
+
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.OrderByDescending(debtor => debtor.Debt).Take(5))
             {
@@ -157,6 +166,7 @@ Debt: {debtor.Debt}");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 $"\nList of World War II debtors");
+
             Console.ForegroundColor = ConsoleColor.White;
             foreach (var debtor in debtors.Where(user => user.BirthDay.Year is >= 1941 and <= 1945))
             {
@@ -170,6 +180,7 @@ Debt: {debtor.Debt}");
             Console.WriteLine(
                 $"\nDebtors who don't have same digits in their phone number");
             Console.ForegroundColor = ConsoleColor.White;
+
             foreach (var debtor in debtors.Where(debtor =>
                 debtor.Phone.Where(char.IsDigit).All(c => debtor.Phone.Count(n => n == c) == 1)))
             {
@@ -189,7 +200,9 @@ Debt: {debtor.Debt}");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(
                 $"\nDebtors with the word \"smile\" in the letters of their fullname");
+
             Console.ForegroundColor = ConsoleColor.White;
+
             var smileDebtors = debtors.Where(d =>
             {
                 var fullName = d.FullName.ToLower();

@@ -6,10 +6,6 @@ using System.Linq;
 
 namespace CSharp_GenericsTask
 {
-    class Run
-    {
-        
-    }
     class Program
     {
         static void Main(string[] args)
@@ -123,6 +119,7 @@ namespace CSharp_GenericsTask
                 "AbdulHajiyev@gmail.com", "9590 Azerbaijan Baku Khazar District Mardakan, AZ 90595", 9590)
             };
             
+            #region Methods
             ExtensionMethods.Method1(debtors);
             ExtensionMethods.Method2(debtors);
             ExtensionMethods.Method3(debtors);
@@ -131,13 +128,17 @@ namespace CSharp_GenericsTask
             ExtensionMethods.Method6(debtors);
             ExtensionMethods.Method7(debtors);
             ExtensionMethods.Method8(debtors);
+            ExtensionMethods.Method9(debtors);
             ExtensionMethods.Method10(debtors);
             ExtensionMethods.Method11(debtors);
             ExtensionMethods.Method12(debtors);
             ExtensionMethods.Method13(debtors); // Added new Debtor to test this method
+            ExtensionMethods.Method14(debtors);
             ExtensionMethods.Method15(debtors);
             Console.ReadKey();
 
+            #endregion Methods
+            
             #region Task
 
             /*
