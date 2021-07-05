@@ -137,6 +137,13 @@ Phone: {debtor.Phone}");
         
         public static void Method9(List<Debtor> debtors)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(
+                "\nMost Year");
+            Console.ForegroundColor = ConsoleColor.White;
+            var most = debtors.GroupBy(i=>i.BirthDay.Year).OrderByDescending(grp=>grp.Count())
+                .Select(grp=>grp.Key).First();
+            Console.WriteLine(most);
         } // Borclulardan en coxu hansi ilde dogulubsa hemin ili cixartmaq
 
         public static void Method10(List<Debtor> debtors)
@@ -185,6 +192,7 @@ Phone: {debtor.Phone}");
                 debtor.Phone.Where(char.IsDigit).All(c => debtor.Phone.Count(n => n == c) == 1)))
             {
                 Console.WriteLine(@$"
+Debtor: {debtor}
 Phone: {debtor.Phone}
 Debt: {debtor.Debt}");
             }
